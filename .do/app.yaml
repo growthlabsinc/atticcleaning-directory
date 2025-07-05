@@ -13,7 +13,7 @@ static_sites:
     
     # GitHub repository connection
     github:
-      repo: eric@atticcleaning.com/atticcleaning-directory
+      repo: atticcleaning/atticcleaning-directory
       branch: main
       deploy_on_push: true
     

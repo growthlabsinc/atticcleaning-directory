@@ -14,6 +14,11 @@ if ! command -v doctl &> /dev/null; then
     exit 1
 fi
 
+# Load environment variables
+if [ -f .env ]; then
+    export $(cat .env | grep -v '^#' | xargs)
+fi
+
 # Authenticate with DigitalOcean
 echo "🔐 Authenticating with DigitalOcean..."
 doctl auth init --access-token ${DIGITALOCEAN_TOKEN}

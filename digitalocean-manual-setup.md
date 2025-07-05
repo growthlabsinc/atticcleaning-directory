@@ -9,7 +9,7 @@ https://cloud.digitalocean.com/
 1. Go to **Apps** → **Create App**
 2. Choose **GitHub** as source
 3. Authorize DigitalOcean to access GitHub (if not already done)
-4. Select repository: `atticcleaning/atticcleaning-directory`
+4. Select repository: `atticcleaning/directory`
 5. Branch: `main`
 6. Type: **Static Site**
 

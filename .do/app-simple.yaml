@@ -16,7 +16,7 @@ static_sites:
     
     # Git repository URL
     git:
-      repo_clone_url: https://github.com/atticcleaning/atticcleaning-directory.git
+      repo_clone_url: https://github.com/atticcleaning/directory.git
       branch: main
     
     # Build settings (none needed for pure static)

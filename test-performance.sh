@@ -6,7 +6,7 @@
 echo "📱 Mobile Performance Testing for AtticCleaning.com"
 echo "=================================================="
 
-DOMAIN="atticcleaning.com"
+DOMAIN="www.atticcleaning.com"
 
 # Function to test with PageSpeed Insights
 test_pagespeed() {

@@ -13,7 +13,7 @@ static_sites:
     
     # GitHub repository connection
     github:
-      repo: atticcleaning/directory
+      repo: growthlabsinc/atticcleaning-directory
       branch: main
       deploy_on_push: true
     

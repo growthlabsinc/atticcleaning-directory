@@ -1,0 +1,60 @@
+name: atticcleaning-website
+region: nyc
+domains:
+  - domain: atticcleaning.com
+    type: PRIMARY
+    zone: atticcleaning.com
+
+static_sites:
+  - name: atticcleaning-static
+    source_dir: /
+    index_document: index.html
+    error_document: 404.html
+    
+    # GitHub repository connection
+    github:
+      repo: atticcleaning/directory
+      branch: main
+      deploy_on_push: true
+    
+    # Build settings (none needed for pure static)
+    build_command: ""
+    
+    # Environment
+    environment_slug: node-js
+    
+    # Routes with CDN caching
+    routes:
+      - path: /
+        
+    # CDN Configuration
+    cdn:
+      enabled: true
+      cache_control:
+        # HTML files - shorter cache
+        - path: "*.html"
+          max_age: 3600
+          s_maxage: 3600
+        # CSS/JS - long cache with immutable
+        - path: "*.css"
+          max_age: 31536000
+          s_maxage: 31536000
+          immutable: true
+        - path: "*.js"
+          max_age: 31536000
+          s_maxage: 31536000
+          immutable: true
+        # JSON data - medium cache
+        - path: "*.json"
+          max_age: 86400
+          s_maxage: 86400
+        # Images - long cache
+        - path: "*.webp"
+          max_age: 2592000
+          s_maxage: 2592000
+        - path: "*.png"
+          max_age: 2592000
+          s_maxage: 2592000
+        - path: "*.jpg"
+          max_age: 2592000
+          s_maxage: 2592000

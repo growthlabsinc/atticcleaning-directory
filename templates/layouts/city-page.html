@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{{city_name}} Attic Cleaning Services | AtticCleaning.com</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Find the best attic cleaning services in {{city_name}}, {{state_abbr}}. Compare local contractors for insulation, rodent removal, and sanitization. Get free quotes from trusted professionals.">
+    <meta name="keywords" content="attic cleaning {{city_name}}, {{city_name}} attic insulation, rodent removal {{city_name}}, attic sanitization {{city_name}}">
+    
+    <!-- Include base meta tags -->
+    <!-- TEMPLATE:meta-tags -->
+    
+    <!-- Critical CSS inline -->
+    <style>
+        /* Include base critical CSS */
+        /* TEMPLATE:critical-css */
+        
+        /* City page specific critical CSS */
+        .city-hero {
+            background-color: var(--color-primary);
+            color: white;
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        
+        .city-hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        @media (min-width: 768px) {
+            .city-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    
+    <!-- Rest of head content from base template -->
+    <!-- TEMPLATE:head-assets -->
+    
+    <!-- City-specific structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{{city_name}} Attic Cleaning Services",
+        "description": "Directory of attic cleaning services in {{city_name}}, {{state_abbr}}",
+        "url": "https://atticcleaning.com/pages/cities/{{city_slug}}.html",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://atticcleaning.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "{{state_name}}",
+                    "item": "https://atticcleaning.com/pages/states/{{state_slug}}.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "{{city_name}}",
+                    "item": "https://atticcleaning.com/pages/cities/{{city_slug}}.html"
+                }
+            ]
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Attic Cleaning Services in {{city_name}}",
+            "numberOfItems": "{{business_count}}",
+            "itemListElement": [
+                <!-- Business listings will be inserted here -->
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip link -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- TEMPLATE:header -->
+    
+    <!-- TEMPLATE:navigation -->
+    
+    <main id="main">
+        <!-- City Hero Section -->
+        <section class="city-hero">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol class="breadcrumb-list">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/pages/states/{{state_slug}}.html">{{state_name}}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{city_name}}</li>
+                    </ol>
+                </nav>
+                
+                <h1>Attic Cleaning Services in {{city_name}}, {{state_abbr}}</h1>
+                <p class="city-hero-description">
+                    Find trusted local contractors for attic cleaning, insulation, and rodent removal
+                </p>
+                
+                <!-- Quick Stats -->
+                <div class="city-stats">
+                    <span class="stat-item">{{business_count}} Local Contractors</span>
+                    <span class="stat-item">{{avg_rating}} Average Rating</span>
+                    <span class="stat-item">Free Quotes Available</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Search Section -->
+        <section class="city-search">
+            <div class="container">
+                <form class="search-form js-search-form" action="/search" method="get">
+                    <input type="hidden" name="city" value="{{city_slug}}">
+                    <label for="city-search" class="search-label">Refine your search in {{city_name}}:</label>
+                    <div class="search-input-group">
+                        <input 
+                            type="search" 
+                            id="city-search"
+                            name="q" 
+                            class="search-input js-search-input" 
+                            placeholder="Search by service or ZIP code..."
+                            autocomplete="off"
+                        >
+                        <button type="submit" class="search-button">Search</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Business Listings -->
+        <section class="business-listings">
+            <div class="container">
+                <h2>Top Attic Cleaning Services in {{city_name}}</h2>
+                
+                <div class="business-grid js-business-grid">
+                    <!-- Business cards will be dynamically inserted here -->
+                    <!-- TEMPLATE:business-cards -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button class="load-more-button js-load-more" data-city="{{city_slug}}">
+                        Load More Contractors
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- City Content Section -->
+        <section class="city-content">
+            <div class="container">
+                <article class="content-article">
+                    <h2>Attic Cleaning Services in {{city_name}}</h2>
+                    
+                    <!-- Dynamic city-specific content -->
+                    <!-- TEMPLATE:city-content -->
+                    
+                    <h3>Common Attic Problems in {{city_name}}</h3>
+                    <ul>
+                        <li>Inadequate insulation leading to high energy bills</li>
+                        <li>Rodent infestations and contamination</li>
+                        <li>Moisture damage and mold growth</li>
+                        <li>Old or damaged insulation needing replacement</li>
+                    </ul>
+                    
+                    <h3>Services Offered by {{city_name}} Contractors</h3>
+                    <ul>
+                        <li>Complete attic cleaning and sanitization</li>
+                        <li>Insulation removal and replacement</li>
+                        <li>Rodent proofing and exclusion</li>
+                        <li>Air sealing and energy efficiency upgrades</li>
+                        <li>Attic ventilation improvements</li>
+                    </ul>
+                    
+                    <h3>Why Choose Local {{city_name}} Contractors?</h3>
+                    <p>
+                        Local attic cleaning professionals in {{city_name}} understand the unique challenges 
+                        of {{state_name}} homes, including climate considerations, building codes, and common 
+                        pest issues. They provide personalized service and can respond quickly to your needs.
+                    </p>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="city-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Clean Your Attic?</h2>
+                    <p>Get free quotes from top-rated contractors in {{city_name}}</p>
+                    <button class="cta-button js-get-quotes" data-city="{{city_slug}}">
+                        Get Free Quotes
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- TEMPLATE:footer -->
+    
+    <!-- Scripts -->
+    <!-- TEMPLATE:scripts -->
+</body>
+</html>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://atticcleaning.com/</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Main Pages -->
+    <url>
+        <loc>https://atticcleaning.com/pages/find-services.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://atticcleaning.com/pages/service-areas.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://atticcleaning.com/pages/about.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://atticcleaning.com/pages/contact.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- State Directory -->
+    <url>
+        <loc>https://atticcleaning.com/pages/states/</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- State Pages -->
+    <url>
+        <loc>https://atticcleaning.com/pages/states/texas.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://atticcleaning.com/pages/states/california.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- City Directory -->
+    <url>
+        <loc>https://atticcleaning.com/pages/cities/</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- City Pages -->
+    <url>
+        <loc>https://atticcleaning.com/pages/cities/dallas.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://atticcleaning.com/pages/cities/houston.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://atticcleaning.com/pages/cities/austin.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://atticcleaning.com/pages/cities/san-antonio.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://atticcleaning.com/pages/cities/fort-worth.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://atticcleaning.com/pages/privacy.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://atticcleaning.com/pages/terms.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>

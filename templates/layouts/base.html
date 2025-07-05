@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- TEMPLATE:title -->
+    <title>Page Title - AtticCleaning.com</title>
+    
+    <!-- TEMPLATE:meta-tags -->
+    <!-- Meta tags will be inserted here -->
+    
+    <!-- Critical CSS inline -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --color-primary: #2c5282;
+            --color-secondary: #3182ce;
+            --color-text: #2d3748;
+            --color-background: #ffffff;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --font-family: system-ui, -apple-system, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            line-height: 1.5;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        /* Mobile-first critical styles */
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
+        }
+    </style>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    
+    <!-- Non-critical CSS deferred -->
+    <link rel="preload" href="/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/logo/favicon.ico" type="image/x-icon">
+    
+    <!-- TEMPLATE:structured-data -->
+    <!-- JSON-LD structured data will be inserted here -->
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- TEMPLATE:header -->
+    <!-- Header will be inserted here -->
+    
+    <!-- TEMPLATE:navigation -->
+    <!-- Navigation will be inserted here -->
+    
+    <main id="main">
+        <!-- TEMPLATE:content -->
+        <!-- Page content will be inserted here -->
+    </main>
+    
+    <!-- TEMPLATE:footer -->
+    <!-- Footer will be inserted here -->
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PT65W6PKKF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PT65W6PKKF');
+    </script>
+    
+    <!-- JavaScript modules -->
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Forms - Form element styles
+   ========================================================================== */
+
+/* Form groups */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Labels */
+label,
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+}
+
+/* Required indicator */
+.required {
+    color: var(--color-error);
+}
+
+/* Input, textarea, select base styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+textarea,
+select,
+.form-input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Textarea specific */
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Select specific */
+select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='%232d3748' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right var(--spacing-sm) center;
+    background-size: 20px;
+    padding-right: var(--spacing-xl);
+}
+
+/* Focus states */
+input:focus,
+textarea:focus,
+select:focus,
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+}
+
+/* Disabled states */
+input:disabled,
+textarea:disabled,
+select:disabled,
+.form-input:disabled {
+    background-color: var(--color-background-alt);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Error states */
+.has-error input,
+.has-error textarea,
+.has-error select,
+input.error,
+textarea.error,
+select.error {
+    border-color: var(--color-error);
+}
+
+.has-error input:focus,
+.has-error textarea:focus,
+.has-error select:focus,
+input.error:focus,
+textarea.error:focus,
+select.error:focus {
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+/* Success states */
+.has-success input,
+.has-success textarea,
+.has-success select,
+input.success,
+textarea.success,
+select.success {
+    border-color: var(--color-success);
+}
+
+/* Help text */
+.form-help,
+.help-text {
+    display: block;
+    margin-top: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.error-message {
+    color: var(--color-error);
+}
+
+.success-message {
+    color: var(--color-success);
+}
+
+/* Checkboxes and radios */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: var(--spacing-xs);
+}
+
+.checkbox-label,
+.radio-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Search forms */
+.search-form,
+.nav-search {
+    position: relative;
+}
+
+.search-input-group {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.search-input,
+.nav-search-input {
+    flex: 1;
+    padding-right: var(--spacing-xl);
+}
+
+.search-button,
+.nav-search-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: var(--spacing-sm);
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.search-button:hover,
+.nav-search-button:hover {
+    color: var(--color-primary);
+}
+
+/* Form layouts */
+.form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.form-inline .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* Input groups */
+.input-group {
+    display: flex;
+}
+
+.input-group input {
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.input-group .btn {
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* Floating labels (progressive enhancement) */
+.form-floating {
+    position: relative;
+}
+
+.form-floating input,
+.form-floating textarea {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-xs);
+}
+
+.form-floating label {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-md);
+    pointer-events: none;
+    transition: all var(--transition-fast);
+    color: var(--color-text-muted);
+}
+
+.form-floating input:focus ~ label,
+.form-floating input:not(:placeholder-shown) ~ label,
+.form-floating textarea:focus ~ label,
+.form-floating textarea:not(:placeholder-shown) ~ label {
+    top: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    color: var(--color-primary);
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .form-inline .form-group {
+        width: 100%;
+    }
+}

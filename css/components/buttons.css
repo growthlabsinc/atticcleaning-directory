@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Buttons - Button component styles
+   ========================================================================== */
+
+/* Base button styles */
+.btn,
+button[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Button variants */
+.btn-primary,
+.search-button,
+.cta-button,
+.load-more-button {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.btn-primary:hover,
+.search-button:hover,
+.cta-button:hover,
+.load-more-button:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: white;
+    border-color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary-dark);
+    border-color: var(--color-secondary-dark);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: transparent;
+}
+
+.btn-ghost:hover {
+    background-color: var(--color-background-alt);
+}
+
+/* Button sizes */
+.btn-sm {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-lg);
+}
+
+/* Full width button */
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+/* Button states */
+.btn:focus,
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.2);
+}
+
+.btn:active,
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+.btn:disabled,
+button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Icon buttons */
+.btn-icon {
+    padding: var(--spacing-sm);
+    width: 40px;
+    height: 40px;
+}
+
+.btn-icon .icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Button with icon and text */
+.btn .icon {
+    margin-right: var(--spacing-xs);
+}
+
+/* Loading state */
+.btn-loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: btn-loading 0.75s linear infinite;
+}
+
+@keyframes btn-loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* CTA button specific styles */
+.cta-button {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-md) var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.cta-button:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 767px) {
+    .btn,
+    button[type="submit"] {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}

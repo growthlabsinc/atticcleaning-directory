@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /scripts/
+Disallow: /tests/
+
+# Sitemap location
+Sitemap: https://atticcleaning.com/sitemap.xml
+
+# Crawl delay for polite crawling
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

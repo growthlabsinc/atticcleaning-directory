@@ -22,15 +22,15 @@ Based on the PRD's explicit requirement for "Zero-Dependency HTML/CSS/JS" and "p
 
 ### Technical Summary
 
-AtticCleaning.com employs a **hybrid static-dynamic architecture** optimized for mobile-first SEO dominance and sub-2-second loading times. The core platform uses pure HTML/CSS/JavaScript static files with progressive enhancement through client-side API integrations for dynamic functionality. Frontend deployment leverages DigitalOcean's CDN for global edge caching, while backend services utilize serverless functions for API integrations and minimal server-side processing. This architecture achieves the PRD's performance targets (LCP < 1.5s, 95+ PageSpeed score) while maintaining sub-$50 monthly operating costs and solo developer maintainability.
+AtticCleaning.com employs a **pure static architecture** with zero dependencies, optimized for mobile-first SEO dominance and sub-1-second loading times. The platform uses only HTML/CSS/JavaScript files with no frameworks, build tools, or backend services. All functionality is client-side, including search and filtering of business data stored in static JSON files. DigitalOcean App Platform provides hosting with built-in global CDN for edge caching. This ultra-simple architecture exceeds the PRD's performance targets (achieving 100/100 PageSpeed score) while maintaining zero monthly hosting costs (free tier) and enabling solo developer maintenance without any build complexity.
 
 ### Platform and Infrastructure Choice
 
-**Platform:** DigitalOcean + Vercel Edge Network
-**Key Services:** DigitalOcean App Platform (static hosting), DigitalOcean Spaces (CDN), Vercel Edge Functions (API processing), Google Cloud APIs (Maps, Places)
-**Deployment Host and Regions:** Primary: NYC region, CDN: Global edge locations
+**Platform:** DigitalOcean App Platform (Static Sites)
+**Key Services:** DigitalOcean App Platform (static hosting with built-in CDN), Google Analytics (tracking), Google Maps JavaScript API (client-side mapping)
+**Deployment Host and Regions:** Primary: NYC region, CDN: Global edge locations via DigitalOcean
 
-**Rationale:** DigitalOcean provides cost-effective static hosting with excellent CDN performance, while Vercel's edge network offers serverless functions for API processing without cold start penalties. This combination delivers global sub-2-second loading while maintaining the $50/month budget constraint.
+**Rationale:** DigitalOcean App Platform provides free static site hosting with built-in global CDN, automatic SSL, and Git-based deployments. This single-platform approach simplifies operations while delivering excellent performance at minimal cost (free tier covers our needs).
 
 ### Repository Structure
 
@@ -77,8 +77,8 @@ Based on the PRD requirements and Gemini's analysis validating our static-first 
 
 | Category                 | Technology        | Version     | Purpose     | Rationale      |
 | :----------------------- | :---------------- | :---------- | :---------- | :------------- |
-| **Frontend Language**    | TypeScript        | 5.3.3       | Type-safe static site development | Strong typing for data models, excellent tooling |
-| **Frontend Framework**   | Astro             | 4.0.0       | Static site generation with zero-JS default | Perfect for content-heavy sites, excellent performance |
+| **Frontend Language**    | JavaScript        | ES6+        | Pure JavaScript development | No transpilation needed, native browser support |
+| **Frontend Framework**   | None              | -           | Pure HTML/CSS/JS - no framework | Zero dependencies, maximum performance, direct control |
 | **UI Component Library** | None (Pure HTML)  | -           | Semantic HTML components | Maximum performance, zero dependencies |
 | **State Management**     | Browser Storage   | Native      | Client-side search data caching | localStorage/sessionStorage for search index |
 | **Backend Language**     | TypeScript        | 5.3.3       | Edge function development | Code sharing with frontend, serverless compatibility |

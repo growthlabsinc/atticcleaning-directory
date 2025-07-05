@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps API Test - AtticCleaning</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7fafc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c5282;
+            margin-bottom: 20px;
+        }
+        .test-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .test-section h2 {
+            color: #2d3748;
+            margin-top: 0;
+        }
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .status.success {
+            background-color: #c6f6d5;
+            color: #22543d;
+        }
+        .status.error {
+            background-color: #fed7d7;
+            color: #742a2a;
+        }
+        .status.loading {
+            background-color: #bee3f8;
+            color: #2a4e7c;
+        }
+        .business-marker {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .business-marker h3 {
+            margin: 0 0 5px 0;
+            color: #2c5282;
+        }
+        .business-marker p {
+            margin: 0;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        pre {
+            background: #f7fafc;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Maps API Test</h1>
+        
+        <div class="test-section">
+            <h2>API Configuration</h2>
+            <pre id="config-display"></pre>
+        </div>
+        
+        <div class="test-section">
+            <h2>API Loading Status</h2>
+            <div id="api-status" class="status loading">Loading Google Maps API...</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Map Test - Texas Attic Cleaning Businesses</h2>
+            <div id="map-status" class="status">Map not initialized</div>
+            <div id="map"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Geocoding Test</h2>
+            <button onclick="testGeocoding()">Test Geocoding</button>
+            <div id="geocoding-results"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Console Output</h2>
+            <pre id="console-output"></pre>
+        </div>
+    </div>
+
+    <script type="module">
+        import { apiClient, initAPI } from './js/modules/api.js';
+        
+        // Make functions globally available for button clicks
+        window.apiClient = apiClient;
+        
+        // Custom console log to display in page
+        const consoleOutput = document.getElementById('console-output');
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            const message = args.map(arg => 
+                typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg
+            ).join(' ');
+            consoleOutput.textContent += `[LOG] ${message}\n`;
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            const message = args.map(arg => 
+                typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg
+            ).join(' ');
+            consoleOutput.textContent += `[ERROR] ${message}\n`;
+        };
+        
+        // Display configuration
+        document.getElementById('config-display').textContent = JSON.stringify(apiClient.config, null, 2);
+        
+        // Test businesses data
+        const testBusinesses = [
+            {
+                name: "ABC Attic Cleaning",
+                city: "Dallas",
+                lat: 32.7831,
+                lng: -96.8067,
+                phone: "(214) 555-0123"
+            },
+            {
+                name: "Green Attic Solutions",
+                city: "Houston",
+                lat: 29.7604,
+                lng: -95.3698,
+                phone: "(713) 555-0456"
+            },
+            {
+                name: "Austin Attic Pros",
+                city: "Austin",
+                lat: 30.2672,
+                lng: -97.7431,
+                phone: "(512) 555-0789"
+            },
+            {
+                name: "San Antonio Attic Experts",
+                city: "San Antonio",
+                lat: 29.4241,
+                lng: -98.4936,
+                phone: "(210) 555-0234"
+            }
+        ];
+        
+        // Test Google Maps API
+        async function testGoogleMaps() {
+            const apiStatus = document.getElementById('api-status');
+            const mapStatus = document.getElementById('map-status');
+            
+            try {
+                console.log('Starting Google Maps API test...');
+                
+                // Load Google Maps
+                const google = await apiClient.loadGoogleMaps();
+                
+                if (!google) {
+                    throw new Error('Google Maps failed to load');
+                }
+                
+                apiStatus.className = 'status success';
+                apiStatus.textContent = 'Google Maps API loaded successfully!';
+                console.log('Google Maps API loaded');
+                
+                // Create map
+                const mapElement = document.getElementById('map');
+                const map = await apiClient.createMap(mapElement, {
+                    center: { lat: 31.0, lng: -100.0 }, // Center of Texas
+                    zoom: 6
+                });
+                
+                if (!map) {
+                    throw new Error('Failed to create map');
+                }
+                
+                mapStatus.className = 'status success';
+                mapStatus.textContent = 'Map created successfully!';
+                console.log('Map created');
+                
+                // Add markers for test businesses
+                const bounds = new google.maps.LatLngBounds();
+                
+                for (const business of testBusinesses) {
+                    const marker = await apiClient.addMarker(map, {
+                        lat: business.lat,
+                        lng: business.lng
+                    }, {
+                        title: business.name
+                    });
+                    
+                    if (marker) {
+                        bounds.extend(marker.getPosition());
+                        
+                        // Create info window
+                        const infoContent = `
+                            <div class="business-marker">
+                                <h3>${business.name}</h3>
+                                <p><strong>City:</strong> ${business.city}, TX</p>
+                                <p><strong>Phone:</strong> ${business.phone}</p>
+                            </div>
+                        `;
+                        
+                        const infoWindow = await apiClient.createInfoWindow(infoContent);
+                        
+                        marker.addListener('click', () => {
+                            infoWindow.open(map, marker);
+                        });
+                        
+                        console.log(`Added marker for ${business.name}`);
+                    }
+                }
+                
+                // Fit map to show all markers
+                map.fitBounds(bounds);
+                
+            } catch (error) {
+                apiStatus.className = 'status error';
+                apiStatus.textContent = `Error: ${error.message}`;
+                mapStatus.className = 'status error';
+                mapStatus.textContent = 'Failed to initialize map';
+                console.error('Google Maps test failed:', error);
+            }
+        }
+        
+        // Test geocoding
+        window.testGeocoding = async function() {
+            const resultsDiv = document.getElementById('geocoding-results');
+            resultsDiv.innerHTML = '<div class="status loading">Testing geocoding...</div>';
+            
+            try {
+                const testAddress = '123 Main St, Dallas, TX 75201';
+                console.log(`Testing geocoding for: ${testAddress}`);
+                
+                const result = await apiClient.geocodeAddress(testAddress);
+                
+                resultsDiv.innerHTML = `
+                    <div class="status success">Geocoding successful!</div>
+                    <pre>${JSON.stringify(result, null, 2)}</pre>
+                `;
+                console.log('Geocoding result:', result);
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="status error">Geocoding failed: ${error.message}</div>
+                `;
+                console.error('Geocoding error:', error);
+            }
+        };
+        
+        // Start the test
+        testGoogleMaps();
+    </script>
+</body>
+</html>

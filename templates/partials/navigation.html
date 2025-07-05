@@ -1,0 +1,38 @@
+<!-- Navigation Section -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="/" class="nav-link nav-link--active" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/pages/find-services.html" class="nav-link">Find Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="/pages/service-areas.html" class="nav-link">Service Areas</a>
+            </li>
+            <li class="nav-item">
+                <a href="/pages/about.html" class="nav-link">About</a>
+            </li>
+        </ul>
+        
+        <!-- Search form in navigation -->
+        <form class="nav-search js-search-form" action="/pages/find-services.html" method="get" role="search">
+            <label for="nav-search-input" class="visually-hidden">Search for attic cleaning services</label>
+            <input 
+                type="search" 
+                id="nav-search-input"
+                name="location" 
+                class="nav-search-input js-search-input" 
+                placeholder="Search by city or ZIP..."
+                aria-label="Search for attic cleaning services"
+                autocomplete="off"
+            >
+            <button type="submit" class="nav-search-button" aria-label="Submit search">
+                <svg class="icon icon-search" width="20" height="20" aria-hidden="true">
+                    <use href="/images/icons/sprite.svg#search"></use>
+                </svg>
+            </button>
+        </form>
+    </div>
+</nav>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find attic cleaning services near you. Search our directory of certified contractors for insulation, rodent removal, and more.">
+    <title>Find Attic Cleaning Services - Search Local Contractors | AtticCleaning.com</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Find Attic Cleaning Services - Search Local Contractors">
+    <meta property="og:description" content="Search our directory of certified attic cleaning contractors. Find services for insulation, rodent removal, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://atticcleaning.com/pages/find-services.html">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PT65W6PKKF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PT65W6PKKF');
+    </script>
+</head>
+<body>
+    <!-- TEMPLATE:header -->
+    <!-- TEMPLATE:navigation -->
+    
+    <main>
+        <!-- Search Header -->
+        <section class="search-header">
+            <div class="container">
+                <h1>Find Attic Cleaning Services</h1>
+                <p class="search-header__subtitle">Connect with certified contractors in your area</p>
+                
+                <!-- Search Form -->
+                <form class="search-form search-form--large js-search-form" method="GET" action="/pages/find-services.html">
+                    <div class="search-form__wrapper">
+                        <div class="form-group">
+                            <label for="location-search" class="visually-hidden">Enter your location</label>
+                            <input 
+                                type="text" 
+                                id="location-search"
+                                name="location" 
+                                class="search-form__input js-search-input" 
+                                placeholder="Enter city or ZIP code..."
+                                value=""
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="service-select" class="visually-hidden">Select service type</label>
+                            <select id="service-select" name="service" class="search-form__select">
+                                <option value="">All Services</option>
+                                <option value="cleaning">Attic Cleaning</option>
+                                <option value="insulation">Insulation Services</option>
+                                <option value="rodent-removal">Rodent Removal</option>
+                                <option value="sanitization">Sanitization</option>
+                                <option value="air-sealing">Air Sealing</option>
+                                <option value="ventilation">Ventilation</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary search-form__button">
+                            Search Contractors
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Results Section -->
+        <section class="search-results">
+            <div class="container">
+                <!-- No Location State -->
+                <div class="no-location-state js-no-location">
+                    <h2>Start Your Search</h2>
+                    <p>Enter your city or ZIP code above to find attic cleaning contractors in your area.</p>
+                    
+                    <!-- Popular Cities -->
+                    <div class="popular-searches">
+                        <h3>Popular Cities</h3>
+                        <div class="city-links">
+                            <a href="/pages/cities/dallas.html" class="city-link">Dallas, TX</a>
+                            <a href="/pages/cities/houston.html" class="city-link">Houston, TX</a>
+                            <a href="/pages/cities/austin.html" class="city-link">Austin, TX</a>
+                            <a href="/pages/cities/san-antonio.html" class="city-link">San Antonio, TX</a>
+                            <a href="/pages/cities/fort-worth.html" class="city-link">Fort Worth, TX</a>
+                            <a href="/pages/service-areas.html" class="city-link">View All Cities →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Categories -->
+                    <div class="service-categories">
+                        <h3>Services We Help You Find</h3>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-card__icon">🧹</div>
+                                <h4 class="service-card__title">Attic Cleaning</h4>
+                                <p class="service-card__description">Complete cleaning and debris removal</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-card__icon">🏠</div>
+                                <h4 class="service-card__title">Insulation Services</h4>
+                                <p class="service-card__description">Removal, replacement, and upgrades</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-card__icon">🐭</div>
+                                <h4 class="service-card__title">Rodent Removal</h4>
+                                <p class="service-card__description">Exclusion and contamination cleanup</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-card__icon">🧼</div>
+                                <h4 class="service-card__title">Sanitization</h4>
+                                <p class="service-card__description">Decontamination and odor removal</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-card__icon">💨</div>
+                                <h4 class="service-card__title">Air Sealing</h4>
+                                <p class="service-card__description">Energy efficiency improvements</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-card__icon">🌀</div>
+                                <h4 class="service-card__title">Ventilation</h4>
+                                <p class="service-card__description">Proper attic airflow solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Loading State -->
+                <div class="loading-state js-loading" style="display: none;">
+                    <div class="loading">Searching for contractors in your area...</div>
+                </div>
+                
+                <!-- Results State -->
+                <div class="results-state js-results" style="display: none;">
+                    <div class="results-header">
+                        <h2 class="results-title js-results-title">Contractors in Your Area</h2>
+                        <p class="results-count js-results-count"></p>
+                    </div>
+                    
+                    <div class="results-grid js-results-grid">
+                        <!-- Results will be populated here -->
+                    </div>
+                    
+                    <div class="no-results js-no-results" style="display: none;">
+                        <h3>No contractors found in this area</h3>
+                        <p>Try searching a nearby city or expanding your search area.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2>How to Get Started</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step__number">1</div>
+                        <h3 class="step__title">Search Your Area</h3>
+                        <p class="step__description">Enter your location to find contractors near you</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">2</div>
+                        <h3 class="step__title">Compare Options</h3>
+                        <p class="step__description">Review services, experience, and customer ratings</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">3</div>
+                        <h3 class="step__title">Get Quotes</h3>
+                        <p class="step__description">Contact contractors directly for free estimates</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- TEMPLATE:footer -->
+    
+    <!-- Load non-critical CSS -->
+    <link rel="preload" href="/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
+    
+    <!-- Load JavaScript modules -->
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>

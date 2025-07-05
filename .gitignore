@@ -1,0 +1,37 @@
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Firebase credentials
+*.json
+firebase-admin-sdk-*.json
+atticcleaningwebsite-firebase-adminsdk-*.json
+
+# macOS
+.DS_Store
+*.textClipping
+
+# Logs
+*.log
+firebase-debug.log
+pglite-debug.log
+
+# Node modules (if ever needed)
+node_modules/
+
+# Editor directories
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Web bundles (BMad tools)
+web-bundles/
+
+# Development directories
+.bmad-core/
+.ai/
